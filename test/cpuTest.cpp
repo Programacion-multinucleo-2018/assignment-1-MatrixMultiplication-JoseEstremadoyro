@@ -1,6 +1,16 @@
 #include "../CPU/matrixMultiplication.h"
 #include <stdio.h>
 
+void printArray(int n,int skip,int * c){
+
+    for(int i=0;i<n;i++){
+        if(i % skip ==0) printf("\n");
+        printf("%d ",c[i]); 
+    }
+    printf("\n");
+
+}
+
 int main(int argc, char ** argv){
 
     int * a = new int[4];
@@ -34,7 +44,13 @@ int main(int argc, char ** argv){
         }
     }
     if (test) printf("Test from cpu: passed.\n");
-    else printf("Test from cpu: failed.\n");
+    else{
+        printf("Test from cpu: failed.\n");
+        printf("Expected:\n");
+        printArray(4,2,correct);
+        printf("Received:\n");
+        printArray(4,2,c);
+    }
 
     delete [] a;
     delete [] b;

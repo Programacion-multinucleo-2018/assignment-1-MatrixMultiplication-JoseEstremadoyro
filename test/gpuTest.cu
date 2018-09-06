@@ -1,4 +1,5 @@
-#include "../CPUOMP/matrixMultiplication.h"
+
+#include "../GPU/matrixMultiplication.h"
 #include <stdio.h>
 
 void printArray(int n,int skip,int * c){
@@ -10,6 +11,7 @@ void printArray(int n,int skip,int * c){
     printf("\n");
 
 }
+
 int main(int argc, char ** argv){
 
     int * a = new int[4];
@@ -25,8 +27,11 @@ int main(int argc, char ** argv){
         b[i-4]=i;
     }
    
+    int * run = new int[6];
+    for(int i=0;i<6;i++)
+        run[i]=1;
 
-    CPUOMPMatrixMultiplication(2,a,b,c);
+    GPUMatrixMultiplication(2,a,b,c,run);
 
     int * correct = new int[4];
 
@@ -42,9 +47,10 @@ int main(int argc, char ** argv){
             test = false;
         }
     }
-    if (test) printf("Test from cpu with omp: passed.\n");
+
+    if (test) printf("Test from gpu: passed.\n");
     else{
-        printf("Test from cpu with omp: failed.\n");
+        printf("Test from gpu: failed.\n");
         printf("Expected:\n");
         printArray(4,2,correct);
         printf("Received:\n");
