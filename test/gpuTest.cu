@@ -30,6 +30,7 @@ int main(int argc, char ** argv){
     int * run = new int[6];
     for(int i=0;i<6;i++)
         run[i]=1;
+    run[3]=32;
 
     GPUMatrixMultiplication(2,a,b,c,run);
 

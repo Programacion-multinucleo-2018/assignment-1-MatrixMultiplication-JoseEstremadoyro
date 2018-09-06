@@ -7,22 +7,25 @@ void multiplyCell(int N,int * a, int * b, int * c){
     unsigned int threadx = blockDim.x * blockIdx.x + threadIdx.x;
 
     // Then we get the col and row
-    int row = threadx % N;
-    int col = threadx / N;
+    int row = threadx / N;
+    int col = threadx % N;
 
-    // Then we multiply and add each one of them
-    int result = 0;
-    /*for(int i=0;i<N;i++){
-        //result +=a[row*N+i]+b[i*N+col];
-    }*/
-    result = a[threadx]+b[threadx];
-    c[threadx]=result;
+    if(row < N && col < N){
+
+        // Then we multiply and add each one of them
+        int result = 0;
+        for(int i=0;i<N;i++){
+            result +=a[row*N+i]*b[i*N+col];
+        }
+
+        c[threadx]=result;
+
+    }
 
 }
 
 void GPUTimedMatrixMultiplication(int N,int * a,int * b, int * c,
-
-        int ** runs, int runsLength){
+                int ** runs, int runsLength){
 
     // Allocate in GPU
     int *d_a,*d_b,*d_c;
@@ -67,7 +70,7 @@ void GPUMatrixMultiplication(int N,int * a,int * b, int * c,
 
     // Allocate in GPU
     int *d_a,*d_b,*d_c;
-    int size = N*sizeof(int);
+    int size = N*N*sizeof(int);
     cudaMalloc(&d_a,size);
     cudaMalloc(&d_b,size);
     cudaMalloc(&d_c,size);
