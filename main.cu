@@ -2,7 +2,7 @@
 #include "CPU/matrixMultiplication.h"
 #include "CPUOMP/matrixMultiplication.h"
 #include "GPU/matrixMultiplication.h"
-#include "GPUTestingHelpers.h"
+#include "GPU/generateRuns.h"
 
 //Fills in both of the arrays with random numbers
 void initialData(int N,int * a,int * b){
