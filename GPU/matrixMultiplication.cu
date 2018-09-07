@@ -1,14 +1,16 @@
 #include <stdio.h>
 
 __global__
-void multiplyCell(int N,int * a, int * b, int * c){
+void multiplyCell(int N, int * a, int * b, int * c){
 
     // We get the index of the current data 
     unsigned int threadx = blockDim.x * blockIdx.x + threadIdx.x;
+    unsigned int thready = threadIdx.y + blockIdx.y * blockDim.y;
+    unsigned int threadxy = thready * N + threadx;
 
     // Then we get the col and row
-    int row = threadx / N;
-    int col = threadx % N;
+    int row = threadxy / N;
+    int col = threadxy % N;
 
     if(row < N && col < N){
 
