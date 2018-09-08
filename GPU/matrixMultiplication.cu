@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <chrono>
+
 
 __global__
 void multiplyCell(int N, int * a, int * b, int * c){
@@ -27,11 +29,11 @@ void multiplyCell(int N, int * a, int * b, int * c){
 }
 
 void GPUTimedMatrixMultiplication(int N,int * a,int * b, int * c,
-                int ** runs, int runsLength){
+        int ** runs, int runsLength){
 
     // Allocate in GPU
     int *d_a,*d_b,*d_c;
-    int size = N*sizeof(int);
+    int size = N*N*sizeof(int);
     cudaMalloc(&d_a,size);
     cudaMalloc(&d_b,size);
     cudaMalloc(&d_c,size);
@@ -40,8 +42,6 @@ void GPUTimedMatrixMultiplication(int N,int * a,int * b, int * c,
     cudaMemcpy(d_a,a,size,cudaMemcpyHostToDevice);
     cudaMemcpy(d_b,b,size,cudaMemcpyHostToDevice);
 
-    // Declare time tables with corresponding data :todo
-
     // Call kernel with the blocks, grid and threads specified
     for(int i=0;i<runsLength;i++){
 
@@ -49,16 +49,21 @@ void GPUTimedMatrixMultiplication(int N,int * a,int * b, int * c,
         dim3 blocksPerGrid(run[0],run[1],run[2]);
         dim3 threadsPerBlock(run[3],run[4],run[5]);
 
-        // Gather initial time :todo
-        multiplyCell<<<blocksPerGrid,threadsPerBlock>>>(N,a,b,c); 
-        // Gather finishing time :todo
+        //initialize timer
+        auto start = std::chrono::high_resolution_clock::now();
+        multiplyCell<<<blocksPerGrid,threadsPerBlock>>>(N,d_a,d_b,d_c); 
+        //finish timer
+        auto end = std::chrono::high_resolution_clock::now();
 
+        std::chrono::duration<float, std::milli> duration_ms = end - start;
+
+        //print result
+        printf("GPU test dimensions threads %d %d blocks %d %d N: %d duration: %f\n ms\n",
+                run[0],run[1],run[3],run[4],N,duration_ms.count());
     }
 
     // Copy result back from gpu
-    cudaMemcpy(d_c,c,size,cudaMemcpyDeviceToHost);
-
-    // Print time table :todo
+    cudaMemcpy(c,d_c,size,cudaMemcpyDeviceToHost);
 
     // Free variables
     cudaFree(d_a);

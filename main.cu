@@ -3,6 +3,7 @@
 #include "CPUOMP/matrixMultiplication.h"
 #include "GPU/matrixMultiplication.h"
 #include "GPU/generateRuns.h"
+#include <chrono>
 
 //Fills in both of the arrays with random numbers
 void initialData(int N,int * a,int * b){
@@ -16,7 +17,7 @@ void initialData(int N,int * a,int * b){
 
 }
 
-void test(int N){
+void timedTest(int N){
 
     // Generate the data
     int *x = new int[N*N];
@@ -24,18 +25,37 @@ void test(int N){
     int *z = new int[N*N];
     initialData(N,x,y);
 
+    // Initialize timer
+    auto start = std::chrono::high_resolution_clock::now();
     // Test on CPU
     CPUMatrixMultiplication(N,x,y,z);
+    // Finish timer
+    auto end = std::chrono::high_resolution_clock::now();
+    
+    std::chrono::duration<float, std::milli> duration_ms = end - start;
+    printf("CPU test N: %d duration %f ms",N,duration_ms.count());
 
+    // Initialize timer
+    start = std::chrono::high_resolution_clock::now();
     // Test on CPU with OMP
     CPUOMPMatrixMultiplication(N,x,y,z);
+    // Finish timer
+    end = std::chrono::high_resolution_clock::now();
+    
+    duration_ms = end - start;
+    printf("CPU OMP test N: %d duration %f ms",N,duration_ms.count());
 
     int ** runs;
-    int * runsLength;
-    generateRuns(runs,runsLength);
+    int runsLength;
+    generateRuns(&runs,&runsLength,N);
 
     // Test on CUDA until there is an error
     GPUTimedMatrixMultiplication(N,x,y,z,runs,runsLength);
+
+    for(int i=0;i<runsLength;i++){
+        free(runs[i]);
+    }
+    free(runs);
 
     // Free all memory
     delete [] x;
@@ -43,16 +63,12 @@ void test(int N){
 
 }
 
-void timedTest(int N){
-
-}
-
 int main(int argc, char ** argv){
 
     // We run the Tests and the results will be printed
-    test(1000);
-    test(2000);
-    test(4000);
+    timedTest(1000);
+    timedTest(2000);
+    timedTest(4000);
     return 0;
 
 }

@@ -55,11 +55,9 @@ void generateRuns(int *** inputRuns,int * length,int N){
        runs[j][5]= 1; 
        j++;
     }
-    printf("j %d\n",j);
 
     // From threads to blocks
     for(i=1;j<*length;i*=2){
-       printf("%d \n",i); 
        runs[j][0]= t/i; 
        runs[j][1]= i; 
        runs[j][2]= 1; 

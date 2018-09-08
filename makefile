@@ -1,3 +1,10 @@
+main:
+	nvcc -std=c++11 main.cu CPU/matrixMultiplication.cpp\
+	   	CPUOMP/matrixMultiplication.cpp GPU/matrixMultiplication.cu\
+		 GPU/generateRuns.cu\
+	   	-o bin/program
+
+
 tests: gpuTest cpuTest cpuOmpTest generateRunsTest
 
 gpuTest:
