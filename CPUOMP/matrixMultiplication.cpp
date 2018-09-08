@@ -2,8 +2,8 @@
 
 void CPUOMPMatrixMultiplication(int N,int*a,int*b,int*c){
 
-    #pragma omp parallel for default(none) shared(N,a,b,c) private(i,j,result,n)
     int result; 
+    #pragma omp parallel for default(none) shared(N,a,b,c) private(result)
     for(int i=0;i<N;i++){
         for(int j=0;j<N;j++){
             result= 0;

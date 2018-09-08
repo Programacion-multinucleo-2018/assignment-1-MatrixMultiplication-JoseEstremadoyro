@@ -63,6 +63,7 @@ void timedTest(int N){
     delete [] x;
     delete [] y;
     delete [] z;
+
 }
 
 int main(int argc, char ** argv){

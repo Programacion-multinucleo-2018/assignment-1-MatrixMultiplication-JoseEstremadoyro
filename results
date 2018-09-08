@@ -1,4 +1,6 @@
-CPU test N: 1000 duration 5190.283691 msCPU OMP test N: 1000 duration 5951.796387 msGenerating test runs using N= 1000:
+CPU test N: 1000 duration 4670.979980 ms
+CPU OMP test N: 1000 duration 4246.362793 ms
+Generating test runs using N= 1000:
 GPU Info
 Name: GeForce GT 750M
 Max Threads Per Block  1024
@@ -6,41 +8,26 @@ Max Threads Size  1024 1024 64
 Max Grid Size 2147483647 65535 65535
 Compute Capability 3
 6 11
-GPU test dimensions threads 1024 1 blocks 977 1 N: 1000 duration: 0.017747
- ms
-GPU test dimensions threads 512 1 blocks 1954 1 N: 1000 duration: 0.001604
- ms
-GPU test dimensions threads 256 1 blocks 3908 1 N: 1000 duration: 0.000617
- ms
-GPU test dimensions threads 128 1 blocks 7816 1 N: 1000 duration: 0.000606
- ms
-GPU test dimensions threads 64 1 blocks 15632 1 N: 1000 duration: 0.000606
- ms
-GPU test dimensions threads 32 1 blocks 31264 1 N: 1000 duration: 0.000604
- ms
-GPU test dimensions threads 1024 1 blocks 977 1 N: 1000 duration: 0.004851
- ms
-GPU test dimensions threads 512 2 blocks 977 1 N: 1000 duration: 0.003197
- ms
-GPU test dimensions threads 256 4 blocks 977 1 N: 1000 duration: 0.003080
- ms
-GPU test dimensions threads 128 8 blocks 977 1 N: 1000 duration: 0.003048
- ms
-GPU test dimensions threads 64 16 blocks 977 1 N: 1000 duration: 0.002749
- ms
-GPU test dimensions threads 32 32 blocks 977 1 N: 1000 duration: 0.002774
- ms
-GPU test dimensions threads 16 64 blocks 977 1 N: 1000 duration: 0.002675
- ms
-GPU test dimensions threads 8 128 blocks 977 1 N: 1000 duration: 0.002679
- ms
-GPU test dimensions threads 4 256 blocks 977 1 N: 1000 duration: 0.003088
- ms
-GPU test dimensions threads 2 512 blocks 977 1 N: 1000 duration: 0.002685
- ms
-GPU test dimensions threads 1 1024 blocks 977 1 N: 1000 duration: 0.002768
- ms
-CPU test N: 1200 duration 13396.043945 msCPU OMP test N: 1200 duration 13421.708008 msGenerating test runs using N= 1200:
+GPU test dimensions threads 1024 1 blocks 977 1 N: 1000 duration: 0.020645 ms
+GPU test dimensions threads 512 1 blocks 1954 1 N: 1000 duration: 0.001510 ms
+GPU test dimensions threads 256 1 blocks 3908 1 N: 1000 duration: 0.000762 ms
+GPU test dimensions threads 128 1 blocks 7816 1 N: 1000 duration: 0.000759 ms
+GPU test dimensions threads 64 1 blocks 15632 1 N: 1000 duration: 0.000952 ms
+GPU test dimensions threads 32 1 blocks 31264 1 N: 1000 duration: 0.000758 ms
+GPU test dimensions threads 1024 1 blocks 977 1 N: 1000 duration: 0.005123 ms
+GPU test dimensions threads 512 2 blocks 977 1 N: 1000 duration: 0.003516 ms
+GPU test dimensions threads 256 4 blocks 977 1 N: 1000 duration: 0.003236 ms
+GPU test dimensions threads 128 8 blocks 977 1 N: 1000 duration: 0.003405 ms
+GPU test dimensions threads 64 16 blocks 977 1 N: 1000 duration: 0.003123 ms
+GPU test dimensions threads 32 32 blocks 977 1 N: 1000 duration: 0.003069 ms
+GPU test dimensions threads 16 64 blocks 977 1 N: 1000 duration: 0.002926 ms
+GPU test dimensions threads 8 128 blocks 977 1 N: 1000 duration: 0.002862 ms
+GPU test dimensions threads 4 256 blocks 977 1 N: 1000 duration: 0.003226 ms
+GPU test dimensions threads 2 512 blocks 977 1 N: 1000 duration: 0.002808 ms
+GPU test dimensions threads 1 1024 blocks 977 1 N: 1000 duration: 0.002978 ms
+CPU test N: 1200 duration 16694.677734 ms
+CPU OMP test N: 1200 duration 7951.965820 ms
+Generating test runs using N= 1200:
 GPU Info
 Name: GeForce GT 750M
 Max Threads Per Block  1024
@@ -48,41 +35,43 @@ Max Threads Size  1024 1024 64
 Max Grid Size 2147483647 65535 65535
 Compute Capability 3
 6 11
-GPU test dimensions threads 1024 1 blocks 1407 1 N: 1200 duration: 0.004889
+GPU test dimensions threads 1024 1 blocks 1407 1 N: 1200 duration: 0.004331
  ms
-GPU test dimensions threads 512 1 blocks 2814 1 N: 1200 duration: 0.000713
+GPU test dimensions threads 512 1 blocks 2814 1 N: 1200 duration: 0.001032
  ms
-GPU test dimensions threads 256 1 blocks 5628 1 N: 1200 duration: 0.000631
+GPU test dimensions threads 256 1 blocks 5628 1 N: 1200 duration: 0.000695
  ms
-GPU test dimensions threads 128 1 blocks 11256 1 N: 1200 duration: 0.000606
+GPU test dimensions threads 128 1 blocks 11256 1 N: 1200 duration: 0.000704
  ms
-GPU test dimensions threads 64 1 blocks 22512 1 N: 1200 duration: 0.000615
+GPU test dimensions threads 64 1 blocks 22512 1 N: 1200 duration: 0.000691
  ms
-GPU test dimensions threads 32 1 blocks 45024 1 N: 1200 duration: 0.000604
+GPU test dimensions threads 32 1 blocks 45024 1 N: 1200 duration: 0.000690
  ms
-GPU test dimensions threads 1024 1 blocks 1407 1 N: 1200 duration: 0.000622
+GPU test dimensions threads 1024 1 blocks 1407 1 N: 1200 duration: 0.000687
  ms
-GPU test dimensions threads 512 2 blocks 1407 1 N: 1200 duration: 0.000607
+GPU test dimensions threads 512 2 blocks 1407 1 N: 1200 duration: 0.000699
  ms
-GPU test dimensions threads 256 4 blocks 1407 1 N: 1200 duration: 0.000611
+GPU test dimensions threads 256 4 blocks 1407 1 N: 1200 duration: 0.000691
  ms
-GPU test dimensions threads 128 8 blocks 1407 1 N: 1200 duration: 0.000618
+GPU test dimensions threads 128 8 blocks 1407 1 N: 1200 duration: 0.000689
  ms
-GPU test dimensions threads 64 16 blocks 1407 1 N: 1200 duration: 0.000620
+GPU test dimensions threads 64 16 blocks 1407 1 N: 1200 duration: 0.000700
  ms
-GPU test dimensions threads 32 32 blocks 1407 1 N: 1200 duration: 0.000610
+GPU test dimensions threads 32 32 blocks 1407 1 N: 1200 duration: 0.000691
  ms
-GPU test dimensions threads 16 64 blocks 1407 1 N: 1200 duration: 0.000622
+GPU test dimensions threads 16 64 blocks 1407 1 N: 1200 duration: 0.000702
  ms
-GPU test dimensions threads 8 128 blocks 1407 1 N: 1200 duration: 0.000607
+GPU test dimensions threads 8 128 blocks 1407 1 N: 1200 duration: 0.000710
  ms
-GPU test dimensions threads 4 256 blocks 1407 1 N: 1200 duration: 0.000609
+GPU test dimensions threads 4 256 blocks 1407 1 N: 1200 duration: 0.000711
  ms
-GPU test dimensions threads 2 512 blocks 1407 1 N: 1200 duration: 0.000605
+GPU test dimensions threads 2 512 blocks 1407 1 N: 1200 duration: 0.000708
  ms
-GPU test dimensions threads 1 1024 blocks 1407 1 N: 1200 duration: 0.000623
+GPU test dimensions threads 1 1024 blocks 1407 1 N: 1200 duration: 0.000701
  ms
-CPU test N: 2000 duration 69913.007812 msCPU OMP test N: 2000 duration 70065.304688 msGenerating test runs using N= 2000:
+CPU test N: 2000 duration 69372.437500 ms
+CPU OMP test N: 2000 duration 41028.484375 ms
+Generating test runs using N= 2000:
 GPU Info
 Name: GeForce GT 750M
 Max Threads Per Block  1024
@@ -90,41 +79,43 @@ Max Threads Size  1024 1024 64
 Max Grid Size 2147483647 65535 65535
 Compute Capability 3
 6 11
-GPU test dimensions threads 1024 1 blocks 3907 1 N: 2000 duration: 0.005369
+GPU test dimensions threads 1024 1 blocks 3907 1 N: 2000 duration: 0.004825
  ms
-GPU test dimensions threads 512 1 blocks 7814 1 N: 2000 duration: 0.000915
+GPU test dimensions threads 512 1 blocks 7814 1 N: 2000 duration: 0.000685
  ms
-GPU test dimensions threads 256 1 blocks 15628 1 N: 2000 duration: 0.000623
+GPU test dimensions threads 256 1 blocks 15628 1 N: 2000 duration: 0.000613
  ms
-GPU test dimensions threads 128 1 blocks 31256 1 N: 2000 duration: 0.000622
+GPU test dimensions threads 128 1 blocks 31256 1 N: 2000 duration: 0.000620
  ms
-GPU test dimensions threads 64 1 blocks 62512 1 N: 2000 duration: 0.000606
+GPU test dimensions threads 64 1 blocks 62512 1 N: 2000 duration: 0.000610
  ms
-GPU test dimensions threads 32 1 blocks 125024 1 N: 2000 duration: 0.000611
+GPU test dimensions threads 32 1 blocks 125024 1 N: 2000 duration: 0.000615
  ms
-GPU test dimensions threads 1024 1 blocks 3907 1 N: 2000 duration: 0.000606
+GPU test dimensions threads 1024 1 blocks 3907 1 N: 2000 duration: 0.000622
  ms
-GPU test dimensions threads 512 2 blocks 3907 1 N: 2000 duration: 0.000604
+GPU test dimensions threads 512 2 blocks 3907 1 N: 2000 duration: 0.000609
  ms
-GPU test dimensions threads 256 4 blocks 3907 1 N: 2000 duration: 0.000649
+GPU test dimensions threads 256 4 blocks 3907 1 N: 2000 duration: 0.000667
  ms
-GPU test dimensions threads 128 8 blocks 3907 1 N: 2000 duration: 0.000610
+GPU test dimensions threads 128 8 blocks 3907 1 N: 2000 duration: 0.000618
  ms
-GPU test dimensions threads 64 16 blocks 3907 1 N: 2000 duration: 0.000603
+GPU test dimensions threads 64 16 blocks 3907 1 N: 2000 duration: 0.000613
  ms
-GPU test dimensions threads 32 32 blocks 3907 1 N: 2000 duration: 0.000609
+GPU test dimensions threads 32 32 blocks 3907 1 N: 2000 duration: 0.000611
  ms
-GPU test dimensions threads 16 64 blocks 3907 1 N: 2000 duration: 0.000608
+GPU test dimensions threads 16 64 blocks 3907 1 N: 2000 duration: 0.000611
  ms
-GPU test dimensions threads 8 128 blocks 3907 1 N: 2000 duration: 0.000611
+GPU test dimensions threads 8 128 blocks 3907 1 N: 2000 duration: 0.000612
  ms
-GPU test dimensions threads 4 256 blocks 3907 1 N: 2000 duration: 0.000609
+GPU test dimensions threads 4 256 blocks 3907 1 N: 2000 duration: 0.000619
  ms
 GPU test dimensions threads 2 512 blocks 3907 1 N: 2000 duration: 0.000609
  ms
-GPU test dimensions threads 1 1024 blocks 3907 1 N: 2000 duration: 0.000620
+GPU test dimensions threads 1 1024 blocks 3907 1 N: 2000 duration: 0.000618
  ms
-CPU test N: 4000 duration 652235.187500 msCPU OMP test N: 4000 duration 653250.750000 msGenerating test runs using N= 4000:
+CPU test N: 4000 duration 650941.187500 ms
+CPU OMP test N: 4000 duration 363263.843750 ms
+Generating test runs using N= 4000:
 GPU Info
 Name: GeForce GT 750M
 Max Threads Per Block  1024
@@ -132,37 +123,37 @@ Max Threads Size  1024 1024 64
 Max Grid Size 2147483647 65535 65535
 Compute Capability 3
 6 11
-GPU test dimensions threads 1024 1 blocks 15626 1 N: 4000 duration: 0.005873
+GPU test dimensions threads 1024 1 blocks 15626 1 N: 4000 duration: 0.005354
  ms
-GPU test dimensions threads 512 1 blocks 31252 1 N: 4000 duration: 0.000834
+GPU test dimensions threads 512 1 blocks 31252 1 N: 4000 duration: 0.000709
  ms
-GPU test dimensions threads 256 1 blocks 62504 1 N: 4000 duration: 0.000616
+GPU test dimensions threads 256 1 blocks 62504 1 N: 4000 duration: 0.000611
  ms
-GPU test dimensions threads 128 1 blocks 125008 1 N: 4000 duration: 0.000617
+GPU test dimensions threads 128 1 blocks 125008 1 N: 4000 duration: 0.000611
  ms
-GPU test dimensions threads 64 1 blocks 250016 1 N: 4000 duration: 0.000608
+GPU test dimensions threads 64 1 blocks 250016 1 N: 4000 duration: 0.000619
  ms
-GPU test dimensions threads 32 1 blocks 500032 1 N: 4000 duration: 0.000605
+GPU test dimensions threads 32 1 blocks 500032 1 N: 4000 duration: 0.000609
  ms
-GPU test dimensions threads 1024 1 blocks 15626 1 N: 4000 duration: 0.000617
+GPU test dimensions threads 1024 1 blocks 15626 1 N: 4000 duration: 0.000613
  ms
-GPU test dimensions threads 512 2 blocks 15626 1 N: 4000 duration: 0.000607
+GPU test dimensions threads 512 2 blocks 15626 1 N: 4000 duration: 0.000611
  ms
-GPU test dimensions threads 256 4 blocks 15626 1 N: 4000 duration: 0.000616
+GPU test dimensions threads 256 4 blocks 15626 1 N: 4000 duration: 0.000611
  ms
-GPU test dimensions threads 128 8 blocks 15626 1 N: 4000 duration: 0.000606
+GPU test dimensions threads 128 8 blocks 15626 1 N: 4000 duration: 0.000610
  ms
-GPU test dimensions threads 64 16 blocks 15626 1 N: 4000 duration: 0.000620
+GPU test dimensions threads 64 16 blocks 15626 1 N: 4000 duration: 0.000612
  ms
-GPU test dimensions threads 32 32 blocks 15626 1 N: 4000 duration: 0.000606
+GPU test dimensions threads 32 32 blocks 15626 1 N: 4000 duration: 0.000620
  ms
-GPU test dimensions threads 16 64 blocks 15626 1 N: 4000 duration: 0.000605
+GPU test dimensions threads 16 64 blocks 15626 1 N: 4000 duration: 0.000613
  ms
-GPU test dimensions threads 8 128 blocks 15626 1 N: 4000 duration: 0.000600
+GPU test dimensions threads 8 128 blocks 15626 1 N: 4000 duration: 0.000620
  ms
-GPU test dimensions threads 4 256 blocks 15626 1 N: 4000 duration: 0.000605
+GPU test dimensions threads 4 256 blocks 15626 1 N: 4000 duration: 0.000612
  ms
-GPU test dimensions threads 2 512 blocks 15626 1 N: 4000 duration: 0.000605
+GPU test dimensions threads 2 512 blocks 15626 1 N: 4000 duration: 0.000621
  ms
-GPU test dimensions threads 1 1024 blocks 15626 1 N: 4000 duration: 0.000604
+GPU test dimensions threads 1 1024 blocks 15626 1 N: 4000 duration: 0.000610
  ms

@@ -1,7 +1,7 @@
 main:
 	nvcc -std=c++11 main.cu CPU/matrixMultiplication.cpp\
 	   	CPUOMP/matrixMultiplication.cpp GPU/matrixMultiplication.cu\
-		 GPU/generateRuns.cu\
+		 GPU/generateRuns.cu -Xcompiler -fopenmp -lgomp\
 	   	-o bin/program
 
 
