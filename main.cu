@@ -34,6 +34,7 @@ void timedTest(int N){
     
     std::chrono::duration<float, std::milli> duration_ms = end - start;
     printf("CPU test N: %d duration %f ms",N,duration_ms.count());
+    fflush(stdout); 
 
     // Initialize timer
     start = std::chrono::high_resolution_clock::now();
@@ -41,6 +42,7 @@ void timedTest(int N){
     CPUOMPMatrixMultiplication(N,x,y,z);
     // Finish timer
     end = std::chrono::high_resolution_clock::now();
+    fflush(stdout); 
     
     duration_ms = end - start;
     printf("CPU OMP test N: %d duration %f ms",N,duration_ms.count());
@@ -60,13 +62,14 @@ void timedTest(int N){
     // Free all memory
     delete [] x;
     delete [] y;
-
+    delete [] z;
 }
 
 int main(int argc, char ** argv){
 
     // We run the Tests and the results will be printed
     timedTest(1000);
+    timedTest(1200);
     timedTest(2000);
     timedTest(4000);
     return 0;

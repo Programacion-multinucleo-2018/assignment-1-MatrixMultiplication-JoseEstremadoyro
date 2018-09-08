@@ -60,6 +60,7 @@ void GPUTimedMatrixMultiplication(int N,int * a,int * b, int * c,
         //print result
         printf("GPU test dimensions threads %d %d blocks %d %d N: %d duration: %f\n ms\n",
                 run[0],run[1],run[3],run[4],N,duration_ms.count());
+        fflush(stdout); 
     }
 
     // Copy result back from gpu
